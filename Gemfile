@@ -7,11 +7,14 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem "mongoid", ">= 3.0.5"
-gem "rspec-rails", ">= 2.11.0", :group => [:development, :test]
+
+gem "bson_ext", "~> 1.3"
+
+gem "mongoid", "~> 2.4.8"
+gem "rspec-rails", "~> 2.8.1" #needs these outside to prevent rake break
 gem "capybara", ">= 1.1.2", :group => :test
-gem "database_cleaner", ">= 0.8.0", :group => :test
-gem "mongoid-rspec", ">= 1.4.6", :group => :test
+gem "database_cleaner"
+
 gem "email_spec", ">= 1.2.1", :group => :test
 gem "factory_girl_rails", ">= 4.0.0", :group => [:development, :test]
 gem "twitter-bootstrap-rails", ">= 2.1.3", :group => :assets

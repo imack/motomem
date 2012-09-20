@@ -2,23 +2,15 @@ development:
   host: localhost
   database: motomem_development
   autocreate_indexes: true
-  raise_not_found_error: false
-  allow_dynamic_fields: false
-  identity_map_enabled: true
 
 
 test:
   host: localhost
   database: motomem_test
   autocreate_indexes: true
-  raise_not_found_error: false
-  allow_dynamic_fields: false
-  identity_map_enabled: true
 
 
 # set these environment variables on your prod server
 production:
   host: localhost
   database: motomem_production
-  raise_not_found_error: false
-  identity_map_enabled: true
