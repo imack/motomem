@@ -2,3 +2,7 @@
 <% @users.each do |user| %>
   <p>User: <%=link_to user.name, user %></p>
 <% end %>
+
+
+
+<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
