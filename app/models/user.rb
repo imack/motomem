@@ -4,9 +4,9 @@ class User
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
-  # :lockable, :timeoutable and :omniauthable
+  # :lockable, :timeoutable and
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   ## Database authenticatable
   field :email,              :type => String, :default => ""
@@ -45,6 +45,29 @@ class User
   # run 'rake db:mongoid:create_indexes' to create indexes
   index :email, unique: true, background: true
   field :name, :type => String
+
+  field :fb_token, :type => String
+
   validates_presence_of :name
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :created_at, :updated_at
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :created_at, :updated_at, :fb_token
+
+
+  def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    unless user
+      user = User.create(name:auth.extra.raw_info.name,
+                         provider:auth.provider,
+                         uid:auth.uid,
+                         email:auth.info.email,
+                         password:Devise.friendly_token[0,20],
+                         fb_token:auth.credentials.token
+      )
+    end
+    user
+  end
+
+  def facebook
+    return Koala::Facebook::API.new(self.fb_token)
+  end
+
 end
