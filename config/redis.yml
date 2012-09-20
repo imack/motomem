@@ -1,0 +1,15 @@
+development:
+  db: 0
+  host: localhost
+  port: 6379
+  namespace: motomem_dev
+test:
+  db: 1
+  host: localhost
+  port: 6379
+  namespace: motomem_test
+production:
+  db: 0
+  host: localhost
+  port: 6379
+  namespace: motomem_production
