@@ -13,7 +13,7 @@ Resque::Failure::Airbrake.configure do |config|
   config.api_key = '5a4c06523fc12a7bd1e82f431a33d6e8'
 end
 
-#Resque::Failure::Multiple.classes = [Resque::Failure::Redis, Resque::Failure::Airbrake]
+Resque::Failure::Multiple.classes = [Resque::Failure::Redis, Resque::Failure::Airbrake]
 Resque::Failure.backend = Resque::Failure::Multiple
 
 unless defined?(RESQUE_LOGGER)
