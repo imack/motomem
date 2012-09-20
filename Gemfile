@@ -8,6 +8,8 @@ end
 
 gem 'jquery-rails'
 
+gem 'airbrake'
+
 gem "bson_ext", "~> 1.3"
 
 gem "mongoid", "~> 2.4.8"

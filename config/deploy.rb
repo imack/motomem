@@ -8,7 +8,7 @@ require "rvm/capistrano" # Load RVM's capistrano plugin.
 before 'deploy:setup', 'rvm:install_rvm'
 before 'deploy:setup', 'rvm:install_ruby'
 
-# after "deploy:create_symlink", "deploy:restart_workers"
+after "deploy:create_symlink", "deploy:restart_workers"
 
   server 'staging.placeling.com', :app, :web, :db, :primary => true
   ssh_options[:forward_agent] = true
