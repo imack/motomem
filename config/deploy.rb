@@ -74,3 +74,6 @@ end
 
 #require 'airbrake/capistrano'
 require './config/boot'
+
+        require './config/boot'
+        require 'airbrake/capistrano'
