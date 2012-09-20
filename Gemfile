@@ -47,3 +47,4 @@ gem "twitter-bootstrap-rails", ">= 2.1.3", :group => :assets
 gem "therubyracer", ">= 0.10.2", :group => :assets, :platform => :ruby
 gem "sendgrid", ">= 1.0.1"
 gem "devise", ">= 2.1.2"
+gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
