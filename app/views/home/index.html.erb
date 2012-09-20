@@ -1,4 +1,48 @@
-<h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
-<% end %>
+<div class="row">
+  <div class="span6">
+    <h2 class="callout">Turn These...</h2>
+  </div>
+  <div class="span6">
+    <h2 class="callout">...Into These</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="span3">
+    <div class="logo"><a href="https://facebook.com"><%= image_tag asset_path("facebook.png") %></a></div>
+    <div class="action">Check-Ins</div>
+  </div>
+  <div class="span3">
+    <div class="logo"><a href="http://instagram.com/"><%= image_tag asset_path("instagram.png") %></a></div>
+    <div class="action">Photos</div>
+  </div>
+  <div class="span3">
+    <div class="logo"><a href="https://facebook.com"><%= image_tag asset_path("facebook.png") %></a></div>
+    <div class="action">Likes</div>
+  </div>
+  <div class="span3">
+    <div class="logo"><a href="https://www.google.com/+/learnmore/local/"><%= image_tag asset_path("google.png") %></a></div>
+    <div class="action">Reviews</div>
+  </div>
+</div>
+<div class="row">
+  <div class="span3">
+    <div class="logo"><a href="https://foursquare.com"><%= image_tag asset_path("foursquare.png") %></a></div>
+    <div class="action">Check-Ins</div>
+  </div>
+  <div class="span3 offset3">
+    <div class="logo"><a href="http://yelp.com"><%= image_tag asset_path("yelp.png") %></a></div>
+    <div class="action">Reviews</div>
+  </div>
+  <div class="span3">
+    <div class="logo"><a href="https://placeling.com"><%= image_tag asset_path("placeling.png") %></a></div>
+    <div class="action">Placemarks</div>
+  </div>
+</div>
+<div class="row">
+  <div class="span6 offset3">
+    <div class="overview">After you check in or take a photo, we'll send you an email with the matching <a href="https://facebook.com">Facebook</a>, <a href="http://www.yelp.com">Yelp</a>, <a href="https://www.google.com/+/learnmore/local/">Google</a> &amp; <a href="https://placeling.com">Placeling</a> location.</div>
+    <div>Connect with Facebook</div>
+    <div class="overview">to get started</div>
+  </div>
+</div>
+
