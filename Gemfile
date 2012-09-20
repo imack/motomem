@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
-gem 'rails', '3.2.6'
+gem 'rails', '3.2.2'
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails', '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
+
 gem 'jquery-rails'
 gem "mongoid", ">= 3.0.5"
 gem "rspec-rails", ">= 2.11.0", :group => [:development, :test]
@@ -22,3 +23,13 @@ gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem 'capistrano'
 gem "capistrano-ext"
 gem "rvm-capistrano", :require => false
+
+gem 'omniauth-facebook'
+gem "koala"
+
+gem 'resque', :require => 'resque/server'
+gem 'resque_mailer'
+
+gem "actionmailer_inline_css"
+
+
