@@ -71,12 +71,10 @@ Motomem::Application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      :address => "smtp.gmail.com",
-      :port => 587,
-      :domain => '@motomem.com',
-      :user_name => 'facebookhackathon',
-      :password => 'bali4life',
-      :authentication => 'plain',
-      :enable_starttls_auto => true}
+      :address   => "smtp.mandrillapp.com",
+      :port      => 25,
+      :user_name => "motomem@placeling.com",
+      :password  => "dc2098d9-f65e-41e5-a5b0-ea7fd935fbba"
+  }
 
 end

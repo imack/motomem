@@ -1,5 +1,5 @@
 class DailyMailer < ActionMailer::Base
-  default from: "facebookhackathon@gmail.com"
+  default from: "motomem@placeling.com"
   include Resque::Mailer
   
   def daily(user_id, facebook_place, google_place)
