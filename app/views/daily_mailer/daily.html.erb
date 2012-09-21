@@ -4,16 +4,21 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <%= stylesheet_link_tag "email" %>
 </head>
-<body style="background-color: #FAF9F7;font-size: 14px;font-family: Helvetica,Arial,sans-serif;">
-  <p>Hey <%= @user.name %></p>
-  <p>You checked in at <span class="place_name"><%= @facebook_place['name'] %></span>.
-  <p><a href="https://facebook.com/pages/placeholder/<%= @facebook_place['id'] %>">Like it</a> on <a href="https://facebook.com">Facebook</a>.</p>
-  <% if @google_place %>
-    <% if @google_place['url'] %>
-    <p><a href="<%= @google_place['url'] %>">Review it</a> on <a href="https://www.google.com/plus">Google Plus</a>.</p>
+<body style="background-color: #FAF9F7;font-size: 18px;font-family: Georgia,Times,serif;padding:0px;margin:0px;">
+  <div class="email_wrapper">
+    <div class="email_user">Hey <span class="email_username"><%= @user.name %></span>,</div>
+    <div class="email_instructions">You checked in at <span class="place_name"><%= @facebook_place['name'] %></span>.</div>
+    <div class="email_image_holder">
+      <img src="https://maps.google.com/maps/api/staticmap?center=<%= @facebook_place['location']['latitude'] %>,<%= @facebook_place['location']['longitude'] %>&zoom=14&size=292x92&&markers=icon:http://www.placeling.com/images/marker.png%%7Ccolor:red%%7C<%= @facebook_place['location']['latitude'] %>,<%= @facebook_place['location']['longitude'] %>&sensor=false">
+    </div>
+    <div class="email_options"><a href="https://facebook.com/<%= @facebook_place['id'] %>">Like it</a> on <a href="https://facebook.com">Facebook</a>.</div>
+    <% if @google_place %>
+      <% if @google_place['url'] %>
+      <div class="email_options"><a href="<%= @google_place['url'] %>">Review it</a> on <a href="https://www.google.com/plus">Google Plus</a>.</div>
+      <% end %>
+      <div class="email_options"><a href="https://placeling.com/places/<%= @google_place['id'] %>">Placemark it</a> on <a href="https://placeling.com">Placeling</a>.</div>
     <% end %>
-    <p><a href="https://placeling.com/places/<%= @google_place['id'] %>">Placemark it</a> on <a href="https://placeling.com">Placeling</a>.</p>
-  <% end %>
+  </div>
 </body>
 </html>
 
