@@ -6,7 +6,7 @@
     </li>
   <% else %>
     <li>
-    <%= link_to 'Login', new_user_session_path %>  
+    <%= link_to 'Login', user_omniauth_authorize_path(:facebook) %>
     </li>
   <% end %>
 </ul>
