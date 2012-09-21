@@ -1,5 +1,5 @@
 class DailyMailer < ActionMailer::Base
-  default from: "contact@motomem.com"
+  default from: "facebookhackathon@gmail.com"
 
   include Resque::Mailer
 
