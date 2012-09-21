@@ -9,7 +9,7 @@ class CheckCheckins
     checkins = user.facebook.get_object("me/locations")
 
     for checkin in checkins
-      if DateTime.iso8601(checkin['created_time']) < 1.days.ago
+      if DateTime.iso8601(checkin['created_time']) < 3.days.ago
         return
       end
 
