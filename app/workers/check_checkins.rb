@@ -23,7 +23,7 @@ class CheckCheckins
 
       @google_place = ApplicationHelper.getGooglePlace( @facebook_place )
 
-      DailyMailer.daily( user.id, @facebook_place, @google_place).deliver!
+      DailyMailer.daily( user.id, @facebook_place, @google_place).deliver
 
       user.checked_places << checkin['place']['id']
       user.save!
