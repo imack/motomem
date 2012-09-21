@@ -44,21 +44,24 @@ class User
   # field :authentication_token, :type => String
   # run 'rake db:mongoid:create_indexes' to create indexes
   index :email, unique: true, background: true
+  index :fb_uid
   field :name, :type => String
+
+  field :fb_uid, :type => String
 
   field :fb_token, :type => String
   field :checked_places, :type => Array, :default => []
 
   validates_presence_of :name
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :created_at, :updated_at, :fb_token, :checked_places
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :created_at, :updated_at, :fb_token, :checked_places, :fb_uid
 
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
-    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    user = User.where( :fb_uid => auth.uid).first
     unless user
       user = User.create(name:auth.extra.raw_info.name,
                          provider:auth.provider,
-                         uid:auth.uid,
+                         fb_uid:auth.uid,
                          email:auth.info.email,
                          password:Devise.friendly_token[0,20],
                          fb_token:auth.credentials.token

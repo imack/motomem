@@ -16,9 +16,7 @@ module ApplicationHelper
     if delta > 250
       return nil
     end
-    return place
-
-
+    return @gp.get_place( place.reference )
   end
 
   # haversine formula to compute the great circle distance between two points given their latitude and longitudes

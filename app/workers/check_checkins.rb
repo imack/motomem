@@ -14,7 +14,7 @@ class CheckCheckins
       end
 
       if user.checked_places.include? checkin['place']['id']
-        break
+        next
       end
 
       @facebook_place = user.facebook.get_object( checkin['place']['id'] )
