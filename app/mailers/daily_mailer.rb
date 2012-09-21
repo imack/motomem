@@ -1,5 +1,5 @@
 class DailyMailer < ActionMailer::Base
-  default from: "contact@placeling.com"
+  default from: "contact@motomem.com"
 
   include Resque::Mailer
 
