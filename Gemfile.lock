@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/37signals/mail_view.git
+  revision: 6a4bc7f01a801e07f313e0425e3aa59e9fa64a10
+  specs:
+    mail_view (1.0.1)
+      tilt
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -284,6 +291,7 @@ DEPENDENCIES
   hub (>= 1.10.2)
   jquery-rails
   koala
+  mail_view!
   mongoid (~> 2.4.8)
   omniauth-facebook
   rails (= 3.2.2)
