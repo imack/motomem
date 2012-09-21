@@ -7,6 +7,6 @@
 #
 set :output, "#{path}/log/cron.log"
 #
-every 3.minutes do
+every 24.hours do
   rake "motomem:daily"
 end
