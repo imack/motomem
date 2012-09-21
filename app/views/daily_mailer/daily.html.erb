@@ -17,7 +17,7 @@
         <% if @google_place['url'] %>
         <div class="email_options"><a href="<%= @google_place['url'] %>">Review it</a> on <a href="https://www.google.com/plus">Google Plus</a>.</div>
         <% end %>
-        <div class="email_options"><a href="https://placeling.com/places/<%= @google_place['id'] %>">Placemark it</a> on <a href="https://placeling.com">Placeling</a>.</div>
+        <div class="email_options"><a href="https://placeling.com/places/<%= @google_place['id'] %>?google_ref=<%= @google_place['reference']%>">Placemark it</a> on <a href="https://placeling.com">Placeling</a>.</div>
       <% end %>
     </div>
   </div>
