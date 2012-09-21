@@ -61,7 +61,7 @@ Motomem::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  config.action_mailer.default_url_options = { :host => 'example.com' }
+  config.action_mailer.default_url_options = { :host => 'www.motomem.com' }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   config.action_mailer.delivery_method = :smtp
@@ -69,15 +69,14 @@ Motomem::Application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default :charset => "utf-8"
 
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: "smtp.sendgrid.net",
-    port: 25,
-    domain: "example.com",
-    authentication: "plain",
-    user_name: ENV["SENDGRID_USERNAME"],
-    password: ENV["SENDGRID_PASSWORD"]
-  }
-
-
+      :address => "smtp.gmail.com",
+      :port => 587,
+      :domain => '@dev.placeling.com',
+      :user_name => 'placeling.dev',
+      :password => 'gmail4placeling',
+      :authentication => 'plain',
+      :enable_starttls_auto => true}
 
 end
