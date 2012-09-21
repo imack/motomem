@@ -3,9 +3,9 @@ require "omniauth-facebook"
 # Many of these configuration options can be set straight in your model.
 
 begin
-  secret_keys = YAML.load_file("/etc/motomem/secret_keys.yml")
+  SECRET_KEYS = YAML.load_file("/etc/motomem/secret_keys.yml")
 rescue
-  secret_keys = YAML.load_file("#{::Rails.root.to_s}/config/secret_keys.yml")
+  SECRET_KEYS = YAML.load_file("#{::Rails.root.to_s}/config/secret_keys.yml")
 end
 
 
@@ -214,7 +214,7 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  config.omniauth :facebook, secret_keys['facebook_app_id'], secret_keys['facebook_app_secret'], {:scope => "email, publish_actions,user_photos,friends_photos,user_status,friends_status", :client_options => {:ssl => {:ca_file => "/usr/lib/ssl/certs/ca-certificates.crt"}}}
+  config.omniauth :facebook, SECRET_KEYS['facebook_app_id'], SECRET_KEYS['facebook_app_secret'], {:scope => "email, publish_actions,user_photos,friends_photos,user_status,friends_status", :client_options => {:ssl => {:ca_file => "/usr/lib/ssl/certs/ca-certificates.crt"}}}
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

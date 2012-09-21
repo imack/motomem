@@ -38,5 +38,7 @@ gem 'resque_mailer'
 gem "actionmailer_inline_css"
 
 
+gem "httparty"
+gem 'geocoder'
 
 gem 'whenever', :require => false
