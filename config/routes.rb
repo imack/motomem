@@ -5,7 +5,6 @@ Motomem::Application.routes.draw do
 
   root :to => "home#index"
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  resources :users, :only => [:show, :index]
 
   devise_scope :user do
     get 'sign_in', :to => 'users/sessions#new', :as => :new_user_session
