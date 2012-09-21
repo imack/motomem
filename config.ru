@@ -8,6 +8,6 @@ Resque::Server.use Rack::Auth::Basic do |username, password|
 end
 
 run Rack::URLMap.new(
-        "/" => Chatham::Application,
+        "/" => Motomem::Application,
         "/resque" => Resque::Server.new
     )
