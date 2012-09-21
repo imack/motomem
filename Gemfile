@@ -38,3 +38,5 @@ gem 'resque_mailer'
 gem "actionmailer_inline_css"
 
 
+
+gem 'whenever', :require => false

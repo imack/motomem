@@ -2,6 +2,9 @@ require 'bundler/capistrano'
 
 set :application, "motomem"
 
+set :whenever_command, "bundle exec whenever"
+require "whenever/capistrano"
+
 set :rvm_ruby_string, "ruby-1.9.3-p125"
 require "rvm/capistrano" # Load RVM's capistrano plugin.
 
@@ -71,3 +74,6 @@ end
 
 #require 'airbrake/capistrano'
 require './config/boot'
+
+        require './config/boot'
+        require 'airbrake/capistrano'

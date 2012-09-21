@@ -47,9 +47,10 @@ class User
   field :name, :type => String
 
   field :fb_token, :type => String
+  field :checked_places, :type => Array, :default => []
 
   validates_presence_of :name
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :created_at, :updated_at, :fb_token
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :created_at, :updated_at, :fb_token, :checked_places
 
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
