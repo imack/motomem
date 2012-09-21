@@ -2,11 +2,18 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <%= stylesheet_link_tag '/email' %>
+  <%= stylesheet_link_tag "email" %>
 </head>
 <body style="background-color: #FAF9F7;font-size: 14px;font-family: Helvetica,Arial,sans-serif;">
-
-    this is the stuff you get
+  <p>Hey <%= @user.name %></p>
+  <p>You checked in at <span class="place_name"><%= @facebook_place['name'] %></span>.
+  <p><a href="https://facebook.com/pages/placeholder/<%= @facebook_place['id'] %>">Like it</a> on <a href="https://facebook.com">Facebook</a>.</p>
+  <% if @google_place %>
+    <% if @google_place['url'] %>
+    <p><a href="<%= @google_place['url'] %>">Review it</a> on <a href="https://www.google.com/plus">Google Plus</a>.</p>
+    <% end %>
+    <p><a href="https://placeling.com/places/<%= @google_place['id'] %>">Placemark it</a> on <a href="https://placeling.com">Placeling</a>.</p>
+  <% end %>
 </body>
 </html>
 
